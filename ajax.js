@@ -126,3 +126,26 @@ Content-Type 프로퍼티의 값을 반드시 "application/x-www-form-urlencoded
 *GET 방식에서는 기본적으로 한글 처리가 가능하다고 하니 따로 Content-Type을 지정
 해줄 필요는 없는 것 같다.
 */
+
+
+//HTTP 응답 처리
+//비동기 방식으로 요청들을 처리하게 되면 클라이언트 입장에서 서버의 응답이
+//언제 올지 모르기 때문에 항상 대기타야된다. ㅋ
+//이를 위한 것이 onreadystatechange 프로퍼티이다!
+
+/*
+    readyState 프로퍼티 값이 변경될 때마다 이벤트가 자동으로 발생하게 된다.
+    사용법은 아래와 같다.
+*/
+
+xhr.onreadystatechange = callFunction;
+
+function callFunction(){
+    if(xhr.readyState === 4){
+        if(xhr.status === 201){
+            //정상 처리
+        }else{
+            //오류 처리
+        }
+    }
+}
