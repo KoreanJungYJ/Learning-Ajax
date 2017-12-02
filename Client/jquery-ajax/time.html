@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <title>Time Example</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <p id = "timezones"></p>
+        <input type = "button" id = "execute" value = "execute">
+
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <script type = "text/javascript">
+            $('#execute').click(function() {
+                $.ajax({
+                    url : './time.php',
+                    dataType : 'json',
+                    success : function(data) {
+                        let str = "";
+                        for(let name in data){
+                            str += '<li>' + data[name] + '</li>';
+                        }
+
+                        $('#timezones').html('<ul>' + str + '</ul>');
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>

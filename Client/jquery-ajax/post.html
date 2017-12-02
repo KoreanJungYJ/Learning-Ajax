@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Post Example</title>
+        <meta charset="utf-8">
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <p>
+            time : <span id = "time"></span>
+        </p>
+        <form>
+            <select name = "timezone">
+                <option value = "Asia/Seoul">asia/seoul</option>
+                <option value = "kore">America/New_York</option>
+            </select>
+            <select name = "format">
+                <option value = "yyy">fff</option>
+                <option value = "ttt">ffff</option>
+            </select>
+        </form>
+        <input type = "button" id= "execute" value = "execute">
+
+        <script type = "text/javascript">
+            $('#execute').click(function() {
+                $.ajax({
+                    url : 'post.php',
+                    type : 'post',
+                    data : $('form').serialize(),
+                    success : function(data) {
+                        $('#time').text(data);
+                    } 
+                });
+            });
+        </script>
+    </body>
+</html>
