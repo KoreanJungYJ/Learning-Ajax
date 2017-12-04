@@ -31,7 +31,10 @@
                     data : $('form').serialize(),
                     success : function(data) {
                         $('#time').text(data);
-                    } 
+                    },
+                    error: function(data){
+                        console.log($('form').serialize());
+                    }
                 });
             });
         </script>

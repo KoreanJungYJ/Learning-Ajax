@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>MakeForm</title>
+        <meta charset="utf-8">
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+        <style>
+            html, body{
+                width:100%;
+                height:100%;
+                margin:0;
+                padding:0;
+            }
+            
+            *{
+                margin:0;
+                padding:0;
+                border:0;
+                outline:none;
+                box-sizing:border-box;
+            }
+            
+            #cover{
+                width:100%;
+                height:100%;
+            }
+            
+            #cover #box{
+                width:80%;
+                height:100%;
+                float:left;
+                border-right:1px solid darkgray;
+            }
+            
+            #cover #make{
+                width:20%;
+                height:100%;
+                float:right;
+            }
+            
+            textarea{
+                display:block;
+                width:80%;
+                height:15rem;
+                border:1px solid darkgrey;
+                margin:0 auto;
+                margin-top:3rem;
+                font-size:1.1rem;
+                padding:5px;
+            }
+            
+            input{
+                display:block;
+                background-color:#F4586D;
+                color:white;
+                width:8.2rem;
+                height:2.8rem;
+                border-radius: 5px;
+                font-size:1rem;
+                letter-spacing: 1px;
+                text-transform:uppercase;
+                margin:0 auto;
+                margin-top:2rem;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "cover">
+            <div id = "box">
+
+            </div>
+            <div id = "make">
+                <textarea id = "val"></textarea>
+                <input type = "button" value = "send" id = "sendBtn">
+                <input type = "button" value = "save" id = "saveBtn">
+            </div>
+        </div>
+        
+        <script type = "text/javascript">
+            let changeBox = document.getElementById('box');
+            let data = document.getElementById('val');
+            let btn = document.getElementById('sendBtn');
+            let btn2 = document.getElementById('saveBtn');
+
+            btn.onclick = () => {
+                changeBox.innerHTML = data.value;
+            }
+
+            btn2.onclick = (e) => {
+                e.preventDefault();
+                $.ajax({
+                    url : 'http://10.156.146.143:8080/Pratice/Ajax/textarea/makeAction.jsp',
+                    methods : 'post',
+                    data : {
+                        value : data.value
+                    },
+                    dataType : 'json',
+                    success : function(data){
+                        console.log(data);
+                        location.replace("main.html")
+                    },
+                    error : function(data){
+                        console.log(data);
+                    }
+                });
+            }
+
+
+        </script>
+    </body>
+</html>
+
+
+
+

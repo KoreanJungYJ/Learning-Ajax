@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset = "utf-8">
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <input type = "button" value = "클릭">
+        <script type = "text/javascript">
+            let btn = document.querySelector('input');
+            btn.onclick = () => {
+                $.ajax({
+                    url : 'test.html',
+                    success : function(data){
+                        console.log(data);
+                    },
+                    error : function(data){
+                        
+                        
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

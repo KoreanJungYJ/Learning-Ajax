@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <title>Learning Ajax</title>
+        <meta charset = "utf-8">
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+        <style type="text/css">
+            html, body{
+                width:100%;
+                height:100%;
+                margin:0;
+                padding:0;
+            }
+            
+            *{
+                margin:0;
+                padding:0;
+                border:0;
+                outline:none;
+                box-sizing:border-box;
+            }
+            
+            #cover{
+                width:100%;
+                height:100%;
+            }
+            
+            #cover #btnForm{
+                width:15rem;
+                height:100%;
+                float:left;
+            }
+            
+            #cover #outputForm{
+                width:calc(100% - 15rem);
+                height:100%;
+                float:right;
+                border-left: 1px solid darkgray;
+            }
+            
+            #btnForm input{
+                width:8rem;
+                height:2.8rem;
+                border-radius: 5px;
+                display:block;
+                margin:0 auto;
+                margin-top:3rem;
+                cursor:pointer;
+            }
+            
+            #outputForm .forms{
+                width:15rem;
+                height:15rem;
+                border:1px solid darkgray;
+                border-radius: 2px;
+                margin:1rem;
+                float:left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "cover">
+            <div id = "btnForm">
+                <input type = "button" value = "Create">
+            </div>
+            <div id = "outputForm">
+                <div class = "forms">
+                    <!-- 적용될 폼 -->
+                </div>
+            </div>
+        </div>
+        
+        <script type = "text/javascript">
+            let btn = document.querySelector('input');
+            btn.addEventListener('click', () => {
+                window.location.href = "makeForm.html"
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
