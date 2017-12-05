@@ -91,21 +91,33 @@
 
             btn2.onclick = (e) => {
                 e.preventDefault();
-                $.ajax({
-                    url : 'http://10.156.146.143:8080/Pratice/Ajax/textarea/makeAction.jsp',
-                    methods : 'post',
-                    data : {
-                        value : data.value
-                    },
-                    dataType : 'json',
-                    success : function(data){
-                        console.log(data);
-                        location.replace("main.html")
-                    },
-                    error : function(data){
-                        console.log(data);
-                    }
-                });
+                let confirmForm = confirm("등록하시겠습니까?");
+                if(confirmForm){
+                    $.ajax({
+                        url : 'http://10.156.146.143:8080/Pratice/Ajax/textarea/makeAction.jsp',
+                        methods : 'post',
+                        data : {
+                            value : data.value
+                        },
+                        success : function(data, textStatus, jqXHR){
+                            if(changeBox.innerText == "" || textStatus == "failure value"){
+                                alert("Check your value");
+                                console.log(data, textStatus, jqXHR);
+
+                            }else if(textStatus == "failure database"){
+                                alert("Check your value");
+                                console.log(data, textStatus, jqXHR);
+
+                            }else{
+                                location.replace("main.html");
+                            }
+                        },
+                        error : function(jqXHR, textStatus, errorThrown){
+                            console.log(jqXHR, textStatus, errorThrown);
+                        }
+                    });
+                    return false;
+                }
             }
 
 
