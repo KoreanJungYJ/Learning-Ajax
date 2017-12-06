@@ -95,7 +95,7 @@
                 if(confirmForm){
                     $.ajax({
                         url : 'http://10.156.146.143:8080/Pratice/Ajax/textarea/makeAction.jsp',
-                        methods : 'post',
+                        type : 'post',
                         data : {
                             value : data.value
                         },
@@ -116,7 +116,7 @@
                             console.log(jqXHR, textStatus, errorThrown);
                         }
                     });
-                    return false;
+                    //return false;
                 }
             }
 

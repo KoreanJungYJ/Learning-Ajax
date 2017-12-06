@@ -1,0 +1,66 @@
+{
+    "result": [[{
+        "userName": "김용현"
+    }, {
+        "userAge": "18"
+    }, {
+        "userGender": "남자"
+    }, {
+        "userEmail": "sociable@gmail.com"
+    }], [{
+        "userName": "윤태훈"
+    }, {
+        "userAge": "18"
+    }, {
+        "userGender": "남자"
+    }, {
+        "userEmail": "taehoon@gmail.com"
+    }], [{
+        "userName": "윤정현"
+    }, {
+        "userAge": "18"
+    }, {
+        "userGender": "남자"
+    }, {
+        "userEmail": "junghyun@naver.com"
+    }], [{
+        "userName": "조성륜"
+    }, {
+        "userAge": "18"
+    }, {
+        "userGender": "남자"
+    }, {
+        "userEmail": "sunryun@naver.com"
+    }], [{
+        "userName": "김미나"
+    }, {
+        "userAge": "16"
+    }, {
+        "userGender": "여자"
+    }, {
+        "userEmail": "nana@naver.com"
+    }]]
+}
+
+data = {
+    [
+        {
+            'name' : 'K',
+            'gender' : 'male',
+            'email' : 'j@naver.com',
+            'age' : 16
+        },
+        {
+            'name' : 'K',
+            'gender' : 'male',
+            'email' : 'j@naver.com',
+            'age' : 16
+        },
+        {
+            'name' : 'K',
+            'gender' : 'male',
+            'email' : 'j@naver.com',
+            'age' : 16
+        }
+    ]
+}
